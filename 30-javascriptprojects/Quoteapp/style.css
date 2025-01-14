@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body , html{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+.Container{
+    width: 400px ;
+    height: 250px;
+    background-color: rgba(100, 123, 200, 0.5); 
+    /* justify-content: center;
+    align-items: center; */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border: 2px solid black;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0 , 0 , 0,0.2);
+
+
+
+}
+
+.message{
+    margin-top: 20px;
+}
