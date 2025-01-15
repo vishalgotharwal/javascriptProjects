@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stop watch
+    </title>
+    <style>
+        body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+        .container{
+             background-color: rgba(0, 0, 0, 0.571);
+             height: 180px;
+             width: 50%;
+             align-items: center;
+             justify-content: center;
+             display: flex;
+             margin-top: 25rem;
+             margin-left: 25rem;
+
+        }
+        .Buttons{
+          
+            bottom: 20px;
+          margin-top: 8rem;
+          display: flex;
+          gap: 25px;
+        }
+        button{
+            width: 35px;
+            height: 25px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+         
+        <div class="Timer">00 : 00 : 00 </div>
+
+        <div class="Buttons">
+            <button class="stop">stop</button>
+            <button class="start">start</button>
+            <button class="reset">reset</button>
+        </div>
+    
+    </div>
+    <script>
+//         const d = new Date()
+//  const time = d.getTime() / 365
+//  console.log(time)
+
+const Timer = document.querySelector('.Timer')
+const start = document.querySelector('.start') 
+const stop = document.querySelector('.stop')
+const reset = document.querySelector('.reset')
+
+let seconds = 0;
+let minutes = 0;
+let hours = 0;
+let intervalId = null;
+
+start.addEventListener("click" , () => {
+
+    if(intervalId !== null) return ; 
+
+    intervalId = setInterval(()=>{
+         seconds++ ; 
+         if(seconds === 60){
+             seconds = 0 ; 
+             minutes++ ; 
+             if(minutes === 60){
+                 minutes = 0 ; 
+                 hours++ ; 
+             }
+         }
+
+         Timer.innerText = `(${String(hours).padStart(2 , '0') } : ${String(minutes).padStart(2 , '0' )}: ${String(seconds) .padStart(2 , '0')} )`
+      } , 1000)
+
+
+
+
+    })
+
+    stop.addEventListener("click" , ()=>{
+         clearInterval(intervalId) 
+         intervalId = null;
+    })
+
+reset.addEventListener("click" , ()=>{
+     clearInterval(intervalId)
+     intervalId = null ; 
+     seconds = 0 ; 
+     minutes = 0 ; 
+     hours = 0 ; 
+     Timer.innerText = "00:00:00"
+})
+
+
+    </script>
+</body>
+</html>
