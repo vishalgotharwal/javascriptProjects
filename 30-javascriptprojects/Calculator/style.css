@@ -1,0 +1,21 @@
+body{
+    background-color: antiquewhite;
+}
+.Container{
+   display: flex;
+   justify-content: center;
+   text-align: center;
+   margin-top: 20rem;
+   background-color: aqua;
+   width: 20rem;
+   height: 50px;
+}
+.Buttons{
+     display: grid;
+     grid-template-columns: auto auto auto auto;
+     width: 20rem;
+}
+.Editablearea{
+    height: 50px;
+    width: 100%;
+}
