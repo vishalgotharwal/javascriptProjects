@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popup</title>
+    <link rel="stylesheet" href="style.css">
+   
+
+  
+</head>
+<body>
+    
+    <div class="Container">
+        <button class="Submit">Submit</button>
+
+        <div class="Popup">
+            <img src="https://img.icons8.com/?size=100&id=7690&format=png&color=000000" alt="">
+            <h2>Thank You!</h2>
+            <p>Your task has been submitted successfully.</p>
+            <button class="closePopup">Ok</button>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript Code (Fixed)
+        const submitButton = document.querySelector('.Submit'); 
+        const popup = document.querySelector('.Popup');
+        const closeButton = document.querySelector('.closePopup');
+
+        // Show popup when submit button is clicked
+        submitButton.addEventListener("click", () => {
+            popup.style.display = 'block';
+        });
+
+        // Close popup when "Ok" button is clicked
+        closeButton.addEventListener("click", () => {
+            popup.style.display = 'none';
+        });
+    </script>
+
+</body>
+</html>
