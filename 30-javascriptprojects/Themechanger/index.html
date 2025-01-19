@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThemeChanger</title>
+    <style>
+        img{
+            outline: none;
+            padding: 5px;
+
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <button id="buttonid"><img id="img" src="https://img.icons8.com/?size=50&id=648&format=png" alt=""></button>
+    </div>
+
+    <script>
+        const button = document.querySelector('#buttonid')
+        const img = document.querySelector('#img')
+        let toogle = true ; 
+
+        button.addEventListener("click" , ()=>{
+
+            if(toogle == true){
+                 
+                document.body.style.backgroundColor = "Black"
+                
+                img.src = `https://img.icons8.com/?size=50&id=26031&format=png`
+             toogle = false ; 
+            }
+            else{
+                img.src = `https://img.icons8.com/?size=50&id=648&format=png`
+                document.body.style.backgroundColor = 'white'
+                toogle = true;
+            }
+
+             
+        })
+    </script>
+</body>
+</html>
