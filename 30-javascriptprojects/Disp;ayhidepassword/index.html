@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>passwordHider</title>
+</head>
+<style>
+    .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f8f9fa;
+}
+
+.input-container {
+    position: relative;
+    width: 300px;
+}
+
+#password {
+    width: 100%;
+    padding: 10px 40px 10px 10px; /* Space for the icon on the right */
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.input-container img {
+    position: absolute;
+    right: 10px; /* Position the image inside the input */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px; /* Adjust size as needed */
+    cursor: pointer; /* Optional: Change cursor style for interactivity */
+}
+
+</style>
+<body>
+    
+    <div class="container">
+        <div class="input-container">
+            <input type="text" id="password" placeholder="Enter your password">
+            <img src="https://img.icons8.com/?size=50&id=107272&format=png" alt="eye icon" id="img">
+        </div>
+    </div>
+    
+    <script>
+        const img = document.querySelector('#img');
+        const input = document.querySelector('#password');
+       
+        let toggle = true; 
+      
+        img.addEventListener("click", () => {
+            let value = input.value;
+          if (toggle) {
+            img.src = "https://img.icons8.com/?size=30&id=N4H2Joipz7qi&format=gif";
+            changestar();
+
+
+    input.type = 'password'
+
+          
+            toggle = false;
+          } else {
+            input.type = 'text'
+            img.src = "https://img.icons8.com/?size=50&id=107272&format=png";
+            toggle = true;
+          }
+        });
+      
+        // Validate password length
+        function changestar() {
+          let value = input.value;
+          console.log(value.length);
+       
+          
+          if (value.length >= 8) {
+            console.log("Please make sure you insert only 8 characters");
+            input.disabled = true; // Disable input field if length is greater than or equal to 8
+          } else {
+            input.disabled = false; // Re-enable input if length is less than 8
+          }
+
+         
+
+         
+        }
+
+ 
+        // Adding an event listener to track input changes
+        input.addEventListener("input", changestar);
+      </script>
+
+</body>
+</html>
